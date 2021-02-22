@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejers</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class='container-fluid'>
+        <div class="row">
+            <div class="col-lg-4">
+                <h1>Guess Number</h1>
+                <button onClick='numberGame()'>Play guess number</button>
+                <div id="mensaje"></div>
+            </div>
+        
+            <div id="countW" class="col-lg-4">
+                <h1>Count Words</h1>
+                <input placeholder="Enter text" id="textInput">
+                <button onclick="countWords()">Count Words</button>
+                <div id="resultCount"></div>
+            </div>
+            <div class="col-lg-4">
+                <h1><span id="rock">Rock</span> <span id="paper">Paper</span> <span id="scissors">Scissors</span></h1>
+                <img src="https://s3-eu-west-1.amazonaws.com/wia-flarum-bucket/2018-07-04/1530701878-372923-blog-05.png" class="img-fluid">
+                <div id="rpsResult"></div>
+                <div id="rpsWinLoose"></div>
+            </div>
+            <div class="col-lg-4">
+                <h1>Local Time</h1>
+                <div id="localTime"></div>
+            </div>
+            <div id="imgGallery" class="col-lg-4 img-container">
+                <a class="btn btn-left" onclick='changeImgMin()'><i class="fas fa-caret-left"></i></a>
+                <a class="btn btn-right" onclick='changeImgPlus()'><i class="fas fa-caret-right"></i></a>
+            </div>
+            <div id="userContainer" class="col-lg-4">
+                <div id="users">
+
+                </div>
+                <button id="addUser" onclick='addNewUser()'>Add new user</button>
+            </div>
+
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script>
+    <script src="ejer.js"></script>
+</body>
+</html>
