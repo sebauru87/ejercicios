@@ -163,7 +163,7 @@ let showOneUser = async (user) => {
     let d = document.getElementById('users');
     //await sleep(1000);
 
-    d.innerHTML += `<div>${user.name.first} ${user.name.last}<img src="${user.picture.medium}"></div>`
+    d.innerHTML += `<div>${user.name.first} ${user.name.last}<br><img src="${user.picture.medium}"></div>`
     //await sleep(1000);
 
 }
@@ -179,3 +179,8 @@ let addNewUser = () => {
     
 }
 window.onload = fetchUsers;
+
+/* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
+particlesJS.load('particles-js', 'particles.json', function() {
+    console.log('callback - particles.js config loaded');
+  });
