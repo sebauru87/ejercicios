@@ -1,3 +1,5 @@
+gsap.to(".baby", {duration:2, x:400, ease: "bounce"});
+
 let rpsUser = 0;
 let rpsBot = 0;
 
@@ -122,6 +124,10 @@ let changeImgMin = () => {
 }
 window.onload = displayImg();
 
+document.getElementById('imgGallery').onclick = function(){
+    document.getElementById('imgGallery').style.display = "block";
+}
+
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -157,16 +163,20 @@ async function showUsers(users) {
         
     })
     await sleep(1000);
+
     //alert('termino');
 }
 let showOneUser = async (user) => {
     let d = document.getElementById('users');
     //await sleep(1000);
 
-    d.innerHTML += `<div>${user.name.first} ${user.name.last}<br><img src="${user.picture.medium}"></div>`
+    d.innerHTML += `<div id="user">${user.name.first} ${user.name.last}<br><img src="${user.picture.medium}"></div>`
+    //d.innerHTML += `<div class='modal'>${user.name.first} ${user.name.last}<br><img src="${user.picture.large}"></div>`
+
     //await sleep(1000);
 
 }
+
 let addNewUser = () => {
     let d = document.getElementById('users');
     let url_1user = 'https://randomuser.me/api/?results=1';
@@ -178,7 +188,20 @@ let addNewUser = () => {
                     .catch(error => console.log(error))
     
 }
+
 window.onload = fetchUsers;
+//let modal = document.getElementById('user');
+document.addEventListener('click',function(e){
+    if(e.target && e.target.id== 'user'){
+          //do something
+          console.log(e.target);
+          //document.getElementsByClassName('modal').style.color('blue')
+         // e.target.classList.add('modal');
+          //e.target.style.display='block';
+     }
+ });
+
+
 
 /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
 particlesJS.load('particles-js', 'particles.json', function() {
