@@ -201,6 +201,39 @@ document.addEventListener('click',function(e){
      }
  });
 
+ let arrToDos = [];
+
+document.addEventListener('click', (eve) =>{
+    let elem = eve.target.parentElement.innerText;
+    //console.log(eve.target.parentElement.innerText)
+    //console.log(elem.split(' ')[0]);
+    arrToDos.map((item, i) => {
+        if(item==elem.split(' ')[0]){
+            //alert(i);
+            arrToDos.splice(i,1);
+        }
+    })
+    displayToDos();
+
+})
+
+let displayToDos = () =>{
+    let element = document.getElementById('toDoList');
+    element.innerHTML = '';
+    arrToDos.map(e=>{
+        element.innerHTML+= `<div>${e}<span> X</span></div>`;
+    })
+
+}
+
+document.addEventListener('click',function(e){
+    if(e.target.id == 'btnToDo'){
+        arrToDos.push(document.getElementById('inputToDo').value);
+        //document.getElementById('toDoList').innerHTML+=`<li>${txt}</li>`
+        displayToDos()
+
+    }
+})
 
 
 /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
